@@ -1,15 +1,18 @@
 import pytest
 from smhi_obs.smhi_obs import SmhiObs
 from . import fake_smhi_response_data as fake_data
+from pytest_mock import MockerFixture
+import requests
+from typing import Any
 
-def fake_response(mocker, content, status_code = fake_data.status_code_ok):
+def fake_response(mocker: MockerFixture, content: bytes, status_code: int = fake_data.status_code_ok) -> requests.models.Response:
     # Mock GET response from requests package
     response = mocker.Mock()
     response.status_code = status_code
     response.content = content
     return response
 
-def test_get_available_stations(mocker):
+def test_get_available_stations(mocker: MockerFixture) -> None:
     # Patch GET response from requests package
     mocker.patch("smhi_obs.smhi_obs.requests.get",
                  return_value=fake_response(mocker, fake_data.fake_stations_response))
@@ -19,7 +22,7 @@ def test_get_available_stations(mocker):
     # Compare stations with true values
     assert(stations == fake_data.fake_stations_correct_values)
 
-def test_print_available_stations(mocker, capsys):
+def test_print_available_stations(mocker: MockerFixture, capsys: Any) -> None:
     # Patch GET response from requests package
     mocker.patch("smhi_obs.smhi_obs.requests.get",
                  return_value=fake_response(mocker, fake_data.fake_stations_response))
@@ -30,7 +33,7 @@ def test_print_available_stations(mocker, capsys):
     # Compare stations with true values
     assert captured.out == fake_data.print_stations_correct_values
 
-def test_search_station(mocker):
+def test_search_station(mocker: MockerFixture) -> None:
     # Patch GET response from requests package
     mocker.patch("smhi_obs.smhi_obs.requests.get",
                  return_value=fake_response(mocker, fake_data.fake_stations_response))
@@ -40,7 +43,7 @@ def test_search_station(mocker):
     # Compare stations with true values
     assert(stations == fake_data.search_stations_correct_values)
 
-def test_fetch_day_temperatures(mocker):
+def test_fetch_day_temperatures(mocker: MockerFixture) -> None:
     # Patch GET response from requests package for station check of SmhiObs construction
     mocker.patch("smhi_obs.smhi_obs.requests.get",
                  return_value=fake_response(mocker, fake_data.fake_stations_response))
@@ -61,7 +64,7 @@ def test_fetch_day_temperatures(mocker):
                  return_value=fake_response(mocker, fake_data.fake_max_temperature_response))
     assert obs.fetch_day_max_temperature('2022-10-27') == fake_data.fake_max_temperature_correct_value
 
-def test_fetch_month_temperatures(mocker):
+def test_fetch_month_temperatures(mocker: MockerFixture) -> None:
     # Patch GET response from requests package for station check of SmhiObs construction
     mocker.patch("smhi_obs.smhi_obs.requests.get",
                  return_value=fake_response(mocker, fake_data.fake_stations_response))
@@ -80,7 +83,7 @@ def test_fetch_month_temperatures(mocker):
     # Check that cached data was used, i.e. GET request was only called once
     assert get_mock.call_count == 1
 
-def test_fetch_hourly_temperature(mocker):
+def test_fetch_hourly_temperature(mocker: MockerFixture) -> None:
     # Patch GET response from requests package for station check of SmhiObs construction
     mocker.patch("smhi_obs.smhi_obs.requests.get",
                  return_value=fake_response(mocker, fake_data.fake_stations_response))
@@ -92,7 +95,7 @@ def test_fetch_hourly_temperature(mocker):
     for h in range(24):
         assert obs.fetch_hourly_temperature(f'2022-10-27-{h:02}') == fake_data.fake_hourly_temperatures_correct_value[h]
 
-def test_no_cache(mocker):
+def test_no_cache(mocker: MockerFixture) -> None:
     # Patch GET response from requests package for station check of SmhiObs construction
     mocker.patch("smhi_obs.smhi_obs.requests.get",
                  return_value=fake_response(mocker, fake_data.fake_stations_response))
@@ -112,7 +115,7 @@ def test_no_cache(mocker):
     # Check that cached data was not used, i.e. GET request was called 4 times
     assert get_mock.call_count == 4
 
-def test_misspelled_station(mocker):
+def test_misspelled_station(mocker: MockerFixture) -> None:
     # Patch GET response from requests package for station check of SmhiObs construction
     mocker.patch("smhi_obs.smhi_obs.requests.get",
                  return_value=fake_response(mocker, fake_data.fake_stations_response))
@@ -120,7 +123,7 @@ def test_misspelled_station(mocker):
     with pytest.raises(ValueError):
         obs = SmhiObs('Abisok')
 
-def test_failed_GET_response_for_stations(mocker):
+def test_failed_GET_response_for_stations(mocker: MockerFixture) -> None:
     # Patch GET response from requests package
     response = mocker.Mock()
     response.status_code = fake_data.status_code_fail
@@ -130,7 +133,7 @@ def test_failed_GET_response_for_stations(mocker):
     with pytest.raises(RuntimeError):
         stations = SmhiObs.get_available_stations()
 
-def test_failed_GET_response_for_data(mocker):
+def test_failed_GET_response_for_data(mocker: MockerFixture) -> None:
     # Patch GET response from requests package for station check of SmhiObs construction
     mocker.patch("smhi_obs.smhi_obs.requests.get",
                  return_value=fake_response(mocker, fake_data.fake_stations_response))
