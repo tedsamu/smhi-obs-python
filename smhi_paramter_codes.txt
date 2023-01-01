@@ -1,0 +1,40 @@
+21 Byvind: max, 1 gång/tim
+39 Daggpunktstemperatur: momentanvärde, 1 gång/tim
+11 Global Irradians (svenska stationer): medelvärde 1 timme, 1 gång/tim
+22 Lufttemperatur: medel, 1 gång per månad
+26 Lufttemperatur: min, 2 gånger per dygn, kl 06 och 18
+27 Lufttemperatur: max, 2 gånger per dygn, kl 06 och 18
+19 Lufttemperatur: min, 1 gång per dygn
+1 Lufttemperatur: momentanvärde, 1 gång/tim
+2 Lufttemperatur: medelvärde 1 dygn, 1 gång/dygn, kl 00
+20 Lufttemperatur: max, 1 gång per dygn
+9 Lufttryck reducerat havsytans nivå: vid havsytans nivå, momentanvärde, 1 gång/tim
+24 Långvågs-Irradians: Långvågsstrålning, medel 1 timme, varje timme
+40 Markens tillstånd: momentanvärde, 1 gång/dygn, kl 06
+25 Max av MedelVindhastighet: maximum av medelvärde 10 min, under 3 timmar, 1 gång/tim
+28 Molnbas: lägsta molnlager, momentanvärde, 1 gång/tim
+30 Molnbas: andra molnlager, momentanvärde, 1 gång/tim
+32 Molnbas: tredje molnlager, momentanvärde, 1 gång/tim
+34 Molnbas: fjärde molnlager, momentanvärde, 1 gång/tim
+36 Molnbas: lägsta molnbas, momentanvärde, 1 gång/tim
+37 Molnbas: lägsta molnbas, min under 15 min, 1 gång/tim
+29 Molnmängd: lägsta molnlager, momentanvärde, 1 gång/tim
+31 Molnmängd: andra molnlager, momentanvärde, 1 gång/tim
+33 Molnmängd: tredje molnlager, momentanvärde, 1 gång/tim
+35 Molnmängd: fjärde molnlager, momentanvärde, 1 gång/tim
+17 Nederbörd: 2 gånger/dygn, kl 06 och 18
+18 Nederbörd: 1 gång/dygn, kl 18
+15 Nederbördsintensitet: max under 15 min, 4 gånger/tim
+38 Nederbördsintensitet: max av medel under 15 min, 4 gånger/tim
+23 Nederbördsmängd: summa, 1 gång per månad
+14 Nederbördsmängd: summa 15 min, 4 gånger/tim
+5 Nederbördsmängd: summa 1 dygn, 1 gång/dygn, kl 06
+7 Nederbördsmängd: summa 1 timme, 1 gång/tim
+6 Relativ Luftfuktighet: momentanvärde, 1 gång/tim
+13 Rådande väder: momentanvärde, 1 gång/tim resp 8 gånger/dygn
+12 Sikt: momentanvärde, 1 gång/tim
+8 Snödjup: momentanvärde, 1 gång/dygn, kl 06
+10 Solskenstid: summa 1 timme, 1 gång/tim
+16 Total molnmängd: momentanvärde, 1 gång/tim
+4 Vindhastighet: medelvärde 10 min, 1 gång/tim
+3 Vindriktning: medelvärde 10 min, 1 gång/tim
