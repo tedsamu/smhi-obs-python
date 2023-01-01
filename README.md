@@ -60,10 +60,6 @@ For additional non-essential dependencies (e.g. for testing) see [dev/Dockerfile
 ## Support
 Easiest is to use the dedicated issue tracker.
 
-## Roadmap
-Planned updates:
-* [Hourly temperature observations](https://opendata.smhi.se/apidocs/metfcst/index.html)
-
 ## Contributing
 Contributions are welcome. Reach out or put up a MR. 
 
