@@ -14,7 +14,7 @@ from datetime import datetime, timedelta
 sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 # Import the SMHI observation class from smhi_obs package
-from smhi_obs import SmhiObs
+from smhi_obs import SmhiObs # type: ignore[attr-defined]
 
 if __name__ == '__main__':
     # Set station name

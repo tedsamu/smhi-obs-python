@@ -9,11 +9,11 @@
 import sys
 import os
 
-# Add paraent directory (smhi_obs) to PYTHONPATH
+# Add parent directory (smhi_obs) to PYTHONPATH
 sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 # Import the SMHI observation class from smhi_obs package
-from smhi_obs import SmhiObs
+from smhi_obs import SmhiObs # type: ignore[attr-defined]
 
 if __name__ == '__main__':
     # Print all available stations
