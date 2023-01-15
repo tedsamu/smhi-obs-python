@@ -1,4 +1,4 @@
-# smhi_obs_python
+# smhi_obs_python ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/tedsamu/smhi-obs-python/python-app.yml) ![GitHub](https://img.shields.io/github/license/tedsamu/smhi-obs-python)
 **An easy python interface for the SMHI open data API.**
 
 ## Description
