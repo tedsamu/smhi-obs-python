@@ -14,11 +14,16 @@ more advanced features may be missing, however the implemented functionality is 
 ## Usage
 The following minimal example will fetch the average temperature of 2022-11-01 for Stockholm Arlanda Airport-python-python.
 ```
+# Get yesterdays date in YYYY-mm-dd format.
+date = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
+
+# Setup observation object for specific station
 obs = SmhiObs('Stockholm-Arlanda Flygplats')
-avg_temperature = obs.fetch_day_average_temperature('2022-11-01')
+
+# Fetch average temperature of given date
+avg_temperature = obs.fetch_day_average_temperature(date)
 ```
-For more examples see the `examples` directory. Available stations can be found using the 
-`print_available_stations.py` example.
+For more examples see the [examples](smhi_obs/examples/) directory. Available stations can be found using the [print_available_stations.py](smhi_obs/examples/print_available_stations.py) example.
 
 ## Functionality
 ### Meteorological Observations
@@ -48,7 +53,7 @@ SmhiObs('Stockholm-Arlanda Flygplats', cache=False) # Disable cache
 ```
 
 ## Installation
-For testing or development purposes you can use the [Dockerfile](dev/Dockerfile) available in the `dev` directory. This includes all 
+For testing or development purposes you can use the [Dockerfile](dev/Dockerfile) available in the [dev](dev) directory. This includes all 
 dependencies needed for running and testing. It also includes Pycharm Community edition. For usage see [dev/README.md](dev/README.md).
 
 ### Minimum requirements

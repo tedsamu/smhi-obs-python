@@ -82,6 +82,8 @@ class SmhiObs:
                 if datetime.fromtimestamp(r['date']/1000).strftime("%Y-%m-%d-%H") == date:
                     temperature = float(r["value"])
                     break
+        if temperature is None:
+            raise ValueError(f'Could not find entry for given date {date}.')
         return temperature
 
     def __fetch(self, station_id: int, parameter: int, period: str) -> dict:
