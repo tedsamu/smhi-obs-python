@@ -15,4 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --tag ghcr.io/tedsamu/smhi_obs_standalone:latest
+      run: |
+        docker build . --tag ghcr.io/tedsamu/smhi_obs_standalone:latest
+        docker run ghcr.io/tedsamu/smhi_obs_standalone:latest
