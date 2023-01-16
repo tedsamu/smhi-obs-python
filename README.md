@@ -53,6 +53,17 @@ SmhiObs('Stockholm-Arlanda Flygplats', cache=False) # Disable cache
 ```
 
 ## Installation
+### Pre-build docker image
+The pre-build docker image is available in the repo registry. 
+```
+docker run --rm -it smhi_obs_standalone
+```
+It can also be built locally:
+```
+docker build -t smhi_obs_standalone .
+```
+
+### Development environment
 For testing or development purposes you can use the [Dockerfile](dev/Dockerfile) available in the [dev](dev) directory. This includes all 
 dependencies needed for running and testing. It also includes Pycharm Community edition. For usage see [dev/README.md](dev/README.md).
 

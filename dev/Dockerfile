@@ -26,6 +26,7 @@ RUN pip install --no-cache-dir \
     pytest \
     pytest-mock \
     pytest-cov \
-    mypy
+    mypy \
+    flake8
 
 RUN ["/bin/bash", "-c", "set -o pipefail && curl -L https://download.jetbrains.com/python/pycharm-community-2022.1.1.tar.gz  | tar -xvz && ln -s pycharm-community-2022.1.1/bin/pycharm.sh pycharm"]
