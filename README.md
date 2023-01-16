@@ -56,6 +56,7 @@ SmhiObs('Stockholm-Arlanda Flygplats', cache=False) # Disable cache
 ### Pre-build docker image
 The pre-build docker image is available in the repo registry. 
 ```
+docker pull ghcr.io/tedsamu/smhi_obs_standalone:latest
 docker run --rm -it smhi_obs_standalone
 ```
 It can also be built locally:
